@@ -1,0 +1,150 @@
+/*
+Theme Name: Kackel
+Author: Svenska Lantrashönsklubben
+*/
+BODY {
+	background-color : #A58C78;
+	margin : 10px 0px 10px 0px;
+	font-family: Verdana,sans-serif; font-size: 12px; color: #502215; 
+}
+
+a {	color: #502215; font-weight: normal; text-decoration: underline;}
+a:hover {	color: #502215; text-decoration: none;}
+
+A {
+	FONT-SIZE: 12px; COLOR: #502215; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline;
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #00000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline;
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #00000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: none;
+}
+A.aa {
+	FONT-SIZE: 12px; COLOR: #502215; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline;
+}
+A.aa:visited {
+	FONT-SIZE: 12px; COLOR: #502215; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline;
+}
+A.aa:hover {
+	FONT-SIZE: 12px; COLOR: #502215; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: none;
+}
+
+td {
+	FONT-SIZE: 12px; COLOR: #502215; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+hr {
+	COLOR: #502215;
+}
+
+.aktuellt {
+	FONT-SIZE: 12px;
+	COLOR: #502215;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	border-color :#502215;
+	padding: 0 5px 5px 7px;
+	border : 1px solid #A58C78;
+	background-color : #E1D7CF;
+	margin-bottom: 15px;
+	margin-left: 10px;
+}
+
+.text {
+	FONT-SIZE: 12px;
+	COLOR: #502215;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding : 10px;
+	background-color : #ffffff;
+}
+.menyrad {
+	background-color: #A58C78;
+	FONT-SIZE: 12px;
+	COLOR: #fff;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding : 1px 1px 1px 5px;
+}
+
+H1 {
+	FONT-SIZE: 16px;
+	COLOR: #502215;
+	font-variant : small-caps;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin-bottom : 5px;
+}
+H2 {
+	FONT-SIZE: 12px;
+	COLOR: #502215;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+H3 {
+	FONT-SIZE: 16px;
+	COLOR: #502215;
+	font-variant : small-caps;
+	letter-spacing: 3 px;
+	margin-bottom : 5px;
+}
+H4 {
+	FONT-SIZE: 12px;
+	margin-top:6px;
+	margin-bottom:2px;
+	COLOR: #502215;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.datum{
+	FONT-SIZE: 10px;
+	COLOR: #502215;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.botten {
+	FONT-SIZE: 12px;
+	COLOR: #502215;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	border-color :#502215;
+	border-width :1px;
+	border-left : none;
+	border-right-style : none;
+	border-top-style : solid;
+	border-bottom-style : none;
+}
+.topp {
+	FONT-SIZE: 12px;
+	COLOR: #502215;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	border-color :#502215;
+	border-width :1px;
+	border-left : none;
+	border-right-style : none;
+	border-top-style : none;
+	border-bottom-style : solid;
+}
+
+
+#linkList {
+	background: #fff; width: 180px; font-size: 14px; padding: 10px 0px 0px 0px 
+}
+
+/* list styles */
+
+#forening {padding:0px 0px 8px 0px}
+
+#linkList ul {	padding: 3px; margin: 0px; list-style: none;font-family: Verdana,sans-serif;}
+#linkList li {	padding: 0px; margin: 0px;}
+#linkList a {	color: #502215; font-weight: normal; text-decoration: none;}
+#linkList a:hover {	color: #502215; text-decoration: underline;}
+
+#forening ul { background: #E1D7CF; border-bottom: 1px solid #A68C7D; padding: 0px 0px 3px 0px; }
+#forening  li {	padding: 0px; margin-left: 5px;}
+
+#hem li { border-bottom: 1px solid #502215; padding: 3px 0px; }
+#hem a { display: block; }
+#hem a.c { display: inline; }
+
+#forening h3 {background: #A68C7D;color: #fff; margin: 0px;padding: 3px; ;font-family: Verdana,sans-serif;}
+#hem h3 {color: #502215; margin: 2px 2px 2px 0px;padding: 2px 2px 2px 0px;font-family: Verdana,sans-serif;}
+
+.border {
+	border: 1px solid #000000;
+}

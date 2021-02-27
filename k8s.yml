@@ -1,0 +1,175 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kackel
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: wordpress
+  namespace: kackel
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: "1Gi"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql
+  namespace: kackel
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: "1Gi"
+---
+# Source: bitwarden-k8s/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  namespace: kackel
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: wordpress
+---
+# Source: bitwarden-k8s/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: kackel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: wordpress
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: wordpress
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+            - name: wordpress
+              mountPath: /var/www/html
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: mysql:3306
+            - name: WORDPRESS_DB_USER
+              value: wordpress
+            - name: WORDPRESS_DB_PASSWORD
+              value: wordpress
+      volumes:
+        - name: wordpress
+          persistentVolumeClaim:
+            claimName: wordpress
+---
+# Source: bitwarden-k8s/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: kackel
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3306
+      targetPort: mysql
+      protocol: TCP
+      name: mysql
+  selector:
+    app.kubernetes.io/name: mysql
+---
+# Source: bitwarden-k8s/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: kackel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mysql
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5.7
+          ports:
+            - name: mysql
+              containerPort: 3306
+              protocol: TCP
+          volumeMounts:
+            - name: mysql
+              mountPath: /var/lib/mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: wordpress
+            - name: MYSQL_DATABASE
+              value: wordpress
+            - name: MYSQL_USER
+              value: wordpress
+            - name: MYSQL_PASSWORD
+              value: wordpress
+      volumes:
+        - name: mysql
+          persistentVolumeClaim:
+            claimName: mysql
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kackel
+  namespace: kackel
+  annotations:
+    kubernetes.io/ingres.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+    - hosts:
+        - "kackel.home.sjoro.se"
+        - "beta.kackel.se"
+      secretName: kackel-tls
+  rules:
+    - host: "kackel.home.sjoro.se"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wordpress
+                port: 
+                  name: http
+    - host: "beta.kackel.se"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wordpress
+                port: 
+                  name: http
