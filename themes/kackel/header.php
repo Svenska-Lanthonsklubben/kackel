@@ -77,12 +77,67 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <?php
-    $menus = get_registered_nav_menus();
+    <table width="780" border="0" cellspacing="0" cellpadding="2" align="center" bgcolor="#ffffff">
+	<tr>
+		<td class="noprint" colspan="2"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/images/svenska_lanthonsklubben_topp.jpg" width="780" height="199" alt="" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="menyrad" align="right" colspan="2">&nbsp;</td>
+	</tr>
 
-    foreach ($menus as $location => $description) {
+	<tr>
+		<td colspan="2" valign="top">
+			<table width="780">
+				<tr>
 
-        echo $location . ': ' . $description . '<br />';
-    }
+					<td width="160" valign="top" class="noprint">
 
-    ?>
+						<div id="linkList">
+
+							<div id="forening">
+								<h3>Föreningen</h3>
+                                <?php wp_nav_menu( array( 'theme_location' => 'foreningen' ) ); ?>
+							</div>
+
+							<div id="forening">
+								<h3>Praktiska råd</h3>
+                                <?php wp_nav_menu( array( 'theme_location' => 'praktiska-rad' ) ); ?>
+							</div>
+
+							<div id="forening">
+								<h3>Lantraser</h3>
+								<ul>
+									<li><a href="lantras_hons.html" title="Lantraser höns">Höns</A></li>
+									<li><a href="lantras_ankor.html" title="Lantraser ankor">Ankor</a></li>
+									<li><a href="lantras_gass.html" title="Lantraser gäss">Gäss</a></li>
+									<li><a href="lantras_rodlista.html" title="Rödlista höns ankor gäss">Rödlista</a></li>
+									<li><a href="lantrasforeningar.html" title="Systerföreningar">Systerföreningar</a></li>
+								</ul>
+							</div>
+
+							<div id="forening">
+								<h3>Genbanken</h3>
+								<ul>
+									<li><a href="genbank.html" title="Genbanksidén">Genbanksidén</a></li>
+									<li><a href="genbank_levande.html" title="Den levande genbanken">Den levande genbanken</a></li>
+									<li><a href="genbank_kontrakt.html" title="När är jag med i genbanken?">När är jag med?</a></li>
+									<li><a href="genbank_avelsplan.html" title="När är jag med i genbanken?">Avelsplan</a></li>
+									<li><a href="genbanksansvariga.html" title="Kontakta genbanksansvariga">Genbanksansvariga</a></li>
+									<li><a href="genbanker_rasramar.html" title="Boken Genbanker och rasramar">Bok: Genbanker & rasramar</a></li>
+								</ul>
+							</div>
+
+							<div id="forening">
+								<h3>Annonser</h3>
+								<ul>
+									<li><a href="annonser/" title="Annonser - höns ankor gäss">Annonssida</a></li>
+								</ul>
+							</div>
+
+							<div align="center" id="hem">
+								<a href="english.html"><img src="eng.gif" width="16" height="16" alt="In English" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html"><img src="home.gif" width="16" height="16" alt="Till startsidan" border="0"></a>
+							</div>
+
+						</div>
+					</td>
+					<td class="text" width="620" valign="top">
