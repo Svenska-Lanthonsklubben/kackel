@@ -7,5 +7,4 @@ function kackel_enqueue_style()
 }
 add_action('wp_enqueue_scripts', 'kackel_enqueue_style');
 add_theme_support('title-tag');
-register_nav_menu('foreningen', __('Föreningen'));
-register_nav_menu('praktiska-rad', __('Praktiska Råd'));
+register_nav_menu('sidebar', __('Sidomeny'));

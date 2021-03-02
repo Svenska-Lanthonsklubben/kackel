@@ -5,7 +5,7 @@ Author: Svenska Lantrashönsklubben
 BODY {
 	background-color : #A58C78;
 	margin : 10px 0px 10px 0px;
-	font-family: Verdana,sans-serif; font-size: 12px; color: #502215; 
+	font-family: Verdana,sans-serif; font-size: 12px; color: #502215;
 }
 
 a {	color: #502215; font-weight: normal; text-decoration: underline;}
@@ -122,28 +122,70 @@ H4 {
 }
 
 
-#linkList {
-	background: #fff; width: 180px; font-size: 14px; padding: 10px 0px 0px 0px 
+
+/* menu styles */
+div.menu {
+	background: #fff;
+	width: 180px;
+	font-size: 14px;
+	padding-top: 10px;
 }
 
-/* list styles */
+div.menu a {
+	text-decoration: none;
+}
 
-#forening {padding:0px 0px 8px 0px}
+div.menu a:hover {
+	text-decoration: underline;
+}
 
-#linkList ul {	padding: 3px; margin: 0px; list-style: none;font-family: Verdana,sans-serif;}
-#linkList li {	padding: 0px; margin: 0px;}
-#linkList a {	color: #502215; font-weight: normal; text-decoration: none;}
-#linkList a:hover {	color: #502215; text-decoration: underline;}
+div.menu ul {
+	list-style: none;
+}
 
-#forening ul { background: #E1D7CF; border-bottom: 1px solid #A68C7D; padding: 0px 0px 3px 0px; }
-#forening  li {	padding: 0px; margin-left: 5px;}
+ul.menu {
+	margin-top: 0px
+}
 
-#hem li { border-bottom: 1px solid #502215; padding: 3px 0px; }
-#hem a { display: block; }
-#hem a.c { display: inline; }
+/* top level items */
+div.menu > ul {
+	padding: 0px 0px 8px 0px;
+}
 
-#forening h3 {background: #A68C7D;color: #fff; margin: 0px;padding: 3px; ;font-family: Verdana,sans-serif;}
-#hem h3 {color: #502215; margin: 2px 2px 2px 0px;padding: 2px 2px 2px 0px;font-family: Verdana,sans-serif;}
+ul.menu > li > a {
+	background: #A68C7D;
+	color: #ffffff;
+	margin: 0px;
+	padding-left: 3px;
+	font-size: 16px;
+	font-variant: small-caps;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: Verdana,sans-serif;
+	width: 100%;
+	display: table-cell;
+}
+
+ul.menu > li {
+	background: #A68C7D;
+	margin-bottom: 8px;
+	border-bottom: 1px solid #A68C7D;
+}
+
+ul.menu > li > a:hover {
+	text-decoration: none;
+}
+
+/* sub-menu items */
+ul.sub-menu {
+	padding-left: 5px;
+	margin-left: 0px;
+	background: #E1D7CF;
+}
+
+ul.sub-menu li {
+	padding-bottom: 3px;
+}
 
 .border {
 	border: 1px solid #000000;
