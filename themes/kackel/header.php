@@ -76,23 +76,14 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-
-    <table width="780" border="0" cellspacing="0" cellpadding="2" align="center" bgcolor="#ffffff">
-	<tr>
-		<td class="noprint" colspan="2"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/images/svenska_lanthonsklubben_topp.jpg" width="780" height="199" alt="" border="0"></a></td>
-	</tr>
-	<tr>
-		<td class="menyrad" align="right" colspan="2">&nbsp;</td>
-	</tr>
-
-	<tr>
-		<td colspan="2" valign="top">
-			<table width="780">
-				<tr>
-
-					<td width="160" valign="top" class="noprint">
-                            <?php wp_nav_menu( array( 'theme_location' => 'sidebar', 'container_class' => 'menu' ) ); ?>
-					</td>
-
-                    <!-- sido-innehåll -->
-					<td class="text" width="620" valign="top">
+    <div class="wrapper">
+        <header class="main-head">
+            <a href="index.html">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/svenska_lanthonsklubben_topp.jpg" border="0">
+            </a>
+        </header>
+        <nav class="main-nav">
+            <?php wp_nav_menu( array( 'theme_location' => 'sidebar') ); ?>
+        </nav>
+        <!-- sido-innehåll -->
+        <div class="main-content">
