@@ -27,6 +27,13 @@ services:
      WORDPRESS_DB_USER: wordpress
      WORDPRESS_DB_PASSWORD: wordpress
 
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+    - 8080:80
+    environment:
+    - PMA_HOST=db
+
 volumes:
   dbdata:
   wp-content:

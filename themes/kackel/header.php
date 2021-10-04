@@ -83,6 +83,7 @@
             </a>
         </header>
         <nav class="main-nav">
+            <header>Hem | Bli Medlem | Kontakt | Mer</header>
             <?php wp_nav_menu( array( 'theme_location' => 'sidebar') ); ?>
         </nav>
         <!-- sido-innehåll -->
