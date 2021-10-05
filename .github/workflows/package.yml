@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set version
-        run: sed -i 's/#VERSION#/$(echo $GITHUB_REF | cut -d / -f 3)/' themes/kackel/style.css 
+        run: sed -i 's/#VERSION#/$(echo $GITHUB_REF | cut -d / -f 3 | cut -c 2-)/' themes/kackel/style.css 
       - name:
         run: zip zip -r kackel_tema.zip themes/kackel/*
       - name: Release
