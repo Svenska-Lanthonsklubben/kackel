@@ -1,0 +1,21 @@
+name: Package and release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set version
+        run: sed -i 's/#VERSION#/$(echo $GITHUB_REF | cut -d / -f 3)/' themes/kackel/style.css 
+      - name:
+        run: zip zip -r kackel_tema.zip themes/kackel/*
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: kackel_tema.zip
