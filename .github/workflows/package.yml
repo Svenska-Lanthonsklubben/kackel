@@ -14,7 +14,7 @@ jobs:
       - name: Set version
         run: sed -i "s/#VERSION#/$(echo $GITHUB_REF | cut -d / -f 3 | cut -c 2-)/" themes/kackel/style.css 
       - name:
-        run: zip zip -r kackel_tema.zip themes/kackel/*
+        run: zip -r kackel_tema.zip themes/kackel/*
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
