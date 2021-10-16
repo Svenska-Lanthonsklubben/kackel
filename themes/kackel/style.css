@@ -1,10 +1,8 @@
 /*
-/*
 Theme Name: Wordpresstema för kackel.se
 Author: Svenska Lanthönsklubben
 Author URI: https://www.kackel.se/
 Version: #VERSION#
-*/
 */
 
 body {
@@ -72,15 +70,6 @@ nav a {
 	display: block;
 }
 
-nav header {
-	color: white;
-	background: #A68C7D;
-	font-size: 24px;
-	font-weight: bold;
-	padding: 5px;
-	text-align: center;
-}
-
 ul.menu > li > a:hover {
 	text-decoration: none;
 }
@@ -117,6 +106,7 @@ ul.sub-menu {
 .main-head {
 	grid-area: header;
 	background-color: white;
+	margin-bottom: 20px;
 	padding: 2px;
 }
 
@@ -188,7 +178,7 @@ ul.sub-menu {
 		padding-bottom: 10px;
 		border-bottom-width: thin;
 		border-bottom-style: solid;
-		border-bottom-color: black;
+		border-bottom-color: ;
 	}
 
 	ul.sub-menu a {
