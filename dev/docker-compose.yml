@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   db:
-   image: mysql:5.7
+   image: docker.io/mysql:5.7
    volumes:
      - dbdata:/var/lib/mysql
    restart: always
@@ -15,10 +15,10 @@ services:
   wordpress:
    depends_on:
      - db
-   image: wordpress:latest
+   image: docker.io/wordpress:latest
    volumes:
      - wp-content:/var/www/html/wp-content
-     - ./themes/kackel:/var/www/html/wp-content/themes/kackel:Z
+     - ../:/var/www/html/wp-content/themes/kackel:Z
    ports:
      - "8000:80"
    restart: always
@@ -28,7 +28,7 @@ services:
      WORDPRESS_DB_PASSWORD: wordpress
 
   phpmyadmin:
-    image: phpmyadmin
+    image: docker.io/phpmyadmin
     ports:
     - 8080:80
     environment:
