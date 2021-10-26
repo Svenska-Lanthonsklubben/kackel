@@ -147,6 +147,11 @@ ul.sub-menu {
 			"footer";
 }
 
+/* Markera nuvarande sida. */
+li.current_page_item a{
+	font-weight: bold;
+}
+
 table { 
 	width: 100%;
 	margin-top: 2px; 
@@ -167,8 +172,6 @@ td, th {
 	padding: 6px; 
 	text-align: left; 
 }
-
-
 
 @media (max-width: 800px) {
 	table, thead, tbody, th, td, tr { 
