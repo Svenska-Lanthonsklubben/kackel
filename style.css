@@ -147,6 +147,74 @@ ul.sub-menu {
 			"footer";
 }
 
+table { 
+	width: 100%;
+	margin-top: 2px; 
+	border-collapse: collapse; 
+}
+
+tr:nth-of-type(odd) { 
+	background: #E1D7CF; 
+}
+
+th { 
+	background: #A68C7D; 
+	color: white; 
+	font-weight: bold; 
+}
+
+td, th { 
+	padding: 6px; 
+	text-align: left; 
+}
+
+
+
+@media (max-width: 800px) {
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Gömmer tabellrubriker men döljer dom ej helt för accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	td { 
+		border: none;
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	tr {
+		border: 1px solid #A68C7D;
+		border-bottom: 0;
+	}
+
+	tr:last-child {
+		border-bottom: 1px solid #A68C7D;
+	}
+
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	
+	/* Rubriker för styrelsetabellen. 
+	Måste ändras om tabellen ändras i wordpress  */ 
+	figure.table-styrelse td:nth-of-type(1):before { content: "Roll"; }
+	figure.table-styrelse td:nth-of-type(2):before { content: "Namn"; }
+	figure.table-styrelse td:nth-of-type(3):before { content: "E-post"; }
+	figure.table-styrelse td:nth-of-type(4):before { content: "Telefonnummer"; }
+}
+
 @media (min-width: 800px) {
 	.wrapper {
 		width: 800px;
@@ -177,9 +245,7 @@ ul.sub-menu {
 	ul.sub-menu {
 		flex-direction: column;
 		padding-bottom: 10px;
-		border-bottom-width: thin;
-		border-bottom-style: solid;
-		border-bottom-color: ;
+		border-bottom: 1px solid #A68C7D;
 	}
 
 	ul.sub-menu a {
