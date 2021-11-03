@@ -258,7 +258,13 @@ td, th {
 		padding-top: 5px;
 	}
 
-	div.main-content > p {
+	.smalare {
 		margin-right: 30%;
 	}
+
+	.stor-text {
+		font-size: 14px;
+		line-height: 1.3;
+	}
+
 }
