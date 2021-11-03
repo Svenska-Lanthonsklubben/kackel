@@ -114,7 +114,7 @@ ul.sub-menu {
 .main-content {
 	grid-area: content;
 	background-color: white;
-	padding: 10px;
+	padding-right: 20px;
 }
 
 .main-nav {
@@ -171,6 +171,15 @@ th {
 td, th { 
 	padding: 6px; 
 	text-align: left; 
+}
+
+/* Fixa längd på formulär inputs för annonser */
+.wp-block-cwp-block-gutenberg-forms .cwp-form .cwp-field .cwp-field-set textarea {
+	width: 90%;
+}
+
+.wp-block-cwp-block-gutenberg-forms .cwp-form .cwp-field .cwp-field-set input {
+	width: 90%;
 }
 
 .stor-text {
