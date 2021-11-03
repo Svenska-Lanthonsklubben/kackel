@@ -258,7 +258,7 @@ td, th {
 		padding-top: 5px;
 	}
 
-	div.main-content p {
+	div.main-content > p {
 		margin-right: 30%;
 	}
 }

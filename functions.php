@@ -5,7 +5,7 @@ define('THEME_VERSION', $theme->Version);
 
 function kackel_enqueue_style()
 {
-    wp_enqueue_style('kackel-style', get_stylesheet_uri(), THEME_VERSION);
+    wp_enqueue_style('kackel-style', get_stylesheet_uri(), array(), THEME_VERSION);
     wp_enqueue_style('kackel-style-print', get_template_directory_uri() . '/css/print.css', array(), THEME_VERSION, 'print');
 }
 
