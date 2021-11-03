@@ -3,7 +3,7 @@ Theme Name: Wordpresstema för kackel.se
 Author: Svenska Lanthönsklubben
 Author URI: https://www.kackel.se/
 GitHub Theme URI: Svenska-Lanthonsklubben/kackel
-Version: 0.5.4
+Version: 0.5.5
 */
 
 body {
@@ -173,6 +173,11 @@ td, th {
 	text-align: left; 
 }
 
+.stor-text {
+	font-size: 14px;
+	line-height: 1.3;
+}
+
 /* CSS för tabeller på mobil */
 @media (max-width: 800px) {
 	table, thead, tbody, th, td, tr { 
@@ -260,11 +265,6 @@ td, th {
 
 	.smalare {
 		margin-right: 30%;
-	}
-
-	.stor-text {
-		font-size: 14px;
-		line-height: 1.3;
 	}
 
 }
