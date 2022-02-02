@@ -276,7 +276,7 @@ td, th {
 		padding-left: 0;
 	}
 
-	div.main-content > :not(.wp-block-group):not(.wp-block-columns) {
+	div.main-content > :not(.wp-block-group):not(.wp-block-columns):not(.full-sidbredd) {
 		margin-right: 30%;
 	}
 
