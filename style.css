@@ -3,7 +3,7 @@ Theme Name: Wordpresstema för kackel.se
 Author: Svenska Lanthönsklubben
 Author URI: https://www.kackel.se/
 GitHub Theme URI: Svenska-Lanthonsklubben/kackel
-Version: 0.6.3
+Version: 0.6.4
 */
 
 html {
@@ -225,13 +225,26 @@ td, th {
 		white-space: nowrap;
 	}
 	
-	
+	/* Rubriker för kontakt-tabell. 
+	Måste ändras om tabellen ändras i wordpress  */ 
+	figure.table-kontakt td:nth-of-type(1):before { content: "Namn"; }
+	figure.table-kontakt td:nth-of-type(2):before { content: "E-post"; }
+	figure.table-kontakt td:nth-of-type(3):before { content: "Telefon"; }
+
 	/* Rubriker för styrelsetabellen. 
 	Måste ändras om tabellen ändras i wordpress  */ 
 	figure.table-styrelse td:nth-of-type(1):before { content: "Roll"; }
 	figure.table-styrelse td:nth-of-type(2):before { content: "Namn"; }
 	figure.table-styrelse td:nth-of-type(3):before { content: "E-post"; }
-	figure.table-styrelse td:nth-of-type(4):before { content: "Telefonnummer"; }
+	figure.table-styrelse td:nth-of-type(4):before { content: "Telefon"; }
+
+	/* Rubriker för genbanksasvarigatabellen. 
+	Måste ändras om tabellen ändras i wordpress  */ 
+	figure.table-genbanksansvarig td:nth-of-type(1):before { content: "Ras"; }
+	figure.table-genbanksansvarig td:nth-of-type(2):before { content: "Namn"; }
+	figure.table-genbanksansvarig td:nth-of-type(3):before { content: "E-post"; }
+	figure.table-genbanksansvarig td:nth-of-type(4):before { content: "Telefon"; }
+	figure.table-genbanksansvarig td:nth-of-type(5):before { content: "Info"; }
 }
 
 /* CSS för dator */
