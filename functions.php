@@ -85,15 +85,13 @@ function template_ad($entry) {
     $content = <<<EOD
     <!-- wp:columns -->
         <div class="wp-block-columns"><!-- wp:column {"width":"50.00%"} -->
-        <div class="wp-block-column" style="flex-basis:50.00%">
-        <!-- wp:paragraph -->
+        <div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph -->
         <p>$text</p>
-        <!-- /wp:paragraph -->
-        </div>
+        <!-- /wp:paragraph --></div>
         <!-- /wp:column -->
 
         <!-- wp:column {"width":"50.00%"} -->
-        <div class="wp-block-column" style="flex-basis:50.00%"><!-- wp:list -->
+        <div class="wp-block-column" style="flex-basis:50%"><!-- wp:list -->
         <ul>
             <li><strong>Namn:</strong> <a href="mailto:$email">$name</a></li>
             <li><strong>Medlemsnr:</strong> $memberID</li>
