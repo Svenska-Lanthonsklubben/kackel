@@ -81,18 +81,21 @@ function template_ad($entry) {
     $location = $entry['location'];
     $memberID = $entry['memberID'];
     $phone = $entry['phone'];
+    $email = $entry['email'];
     $content = <<<EOD
     <!-- wp:columns -->
-        <div class="wp-block-columns"><!-- wp:column {"width":"66.66%"} -->
-        <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:paragraph -->
+        <div class="wp-block-columns"><!-- wp:column {"width":"50.00%"} -->
+        <div class="wp-block-column" style="flex-basis:50.00%">
+        <!-- wp:paragraph -->
         <p>$text</p>
-        <!-- /wp:paragraph --></div>
+        <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:column -->
 
-        <!-- wp:column {"width":"33.33%"} -->
-        <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:list -->
+        <!-- wp:column {"width":"50.00%"} -->
+        <div class="wp-block-column" style="flex-basis:50.00%"><!-- wp:list -->
         <ul>
-            <li><strong>Namn:</strong> $name</li>
+            <li><strong>Namn:</strong> <a href="mailto:$email">$name</a></li>
             <li><strong>Medlemsnr:</strong> $memberID</li>
             <li><strong>Ort:</strong> $location</li>
             <li><strong>Telefon:</strong> $phone</li>
@@ -106,9 +109,6 @@ function template_ad($entry) {
 
 
 add_action('gutenberg_forms_submission__annonser', function($entry) {
-    do_action( 'qm/debug', "In annons form handle");
-    do_action( 'qm/debug', $entry);
-    
     $new_post = array(
         'post_title' => $entry['title'],
         'post_content' => template_ad($entry),
