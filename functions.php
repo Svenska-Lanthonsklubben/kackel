@@ -83,20 +83,20 @@ function template_ad($entry) {
     $phone = $entry['phone'];
     $email = $entry['email'];
     $content = <<<EOD
-<!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"width":"50.00%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph -->
-<p>$text</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
+        <!-- wp:columns -->
+        <div class="wp-block-columns"><!-- wp:column {"width":"50.00%"} -->
+        <div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph -->
+        <p>$text</p>
+        <!-- /wp:paragraph --></div>
+        <!-- /wp:column -->
 
-<!-- wp:column {"width":"50.00%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:list -->
-<ul><li><strong>Namn:</strong> <a href="mailto:$email">$name</a></li><li><strong>Medlemsnr:</strong> $memberID</li><li><strong>Ort:</strong> $location</li><li><strong>Telefon:</strong> $phone</li></ul>
-<!-- /wp:list --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
-    EOD;
+        <!-- wp:column {"width":"50.00%"} -->
+        <div class="wp-block-column" style="flex-basis:50%"><!-- wp:list -->
+        <ul><li><strong>Namn:</strong> <a href="mailto:$email">$name</a></li><li><strong>Medlemsnr:</strong> $memberID</li><li><strong>Ort:</strong> $location</li><li><strong>Telefon:</strong> $phone</li></ul>
+        <!-- /wp:list --></div>
+        <!-- /wp:column --></div>
+        <!-- /wp:columns -->
+        EOD;
     return $content;
 }
 
