@@ -3,7 +3,7 @@ Theme Name: Wordpresstema för kackel.se
 Author: Svenska Lanthönsklubben
 Author URI: https://www.kackel.se/
 GitHub Theme URI: Svenska-Lanthonsklubben/kackel
-Version: 0.6.4
+Version: 0.6.5
 */
 
 html {
@@ -134,22 +134,15 @@ ul.sub-menu {
 	text-align: right;
 }
 
-.wrapper {
+body > .wrapper {
 	display: grid;
-	grid-template-areas:
-			"header"
-			"nav"
-			"content";
-    margin: auto;
-}
-
-.wrapper {
 	grid-template-columns: 1fr;
 	grid-template-areas:
 			"header"
 			"nav"
 			"content"
 			"footer";
+	margin: auto;
 }
 
 /* Markera nuvarande sida. */
@@ -185,6 +178,17 @@ td, th {
 
 .wp-block-cwp-block-gutenberg-forms .cwp-form .cwp-field .cwp-field-set input {
 	width: 90%;
+}
+
+.wp-block-cwp-block-gutenberg-forms .cwp-form .cwp-field .cwp-select-set select {
+	width: 96%;
+	background-color: white;
+	padding: 10px;
+}
+
+/* Dölj ny annons-knappen */
+cwp-add_another_submission {
+	display: none;
 }
 
 /* CSS för tabeller på mobil */
@@ -249,7 +253,7 @@ td, th {
 
 /* CSS för dator */
 @media (min-width: 800px) {
-	.wrapper {
+	body > .wrapper {
 		width: 800px;
 		grid-template-columns: 1fr 2fr 1fr;
 		grid-template-areas:
