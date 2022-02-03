@@ -3,7 +3,7 @@ Theme Name: Wordpresstema för kackel.se
 Author: Svenska Lanthönsklubben
 Author URI: https://www.kackel.se/
 GitHub Theme URI: Svenska-Lanthonsklubben/kackel
-Version: 0.6.5
+Version: 0.6.6
 */
 
 html {
@@ -187,7 +187,7 @@ td, th {
 }
 
 /* Dölj ny annons-knappen */
-cwp-add_another_submission {
+.cwp-add_another_submission {
 	display: none;
 }
 
