@@ -5,7 +5,7 @@
  * @return csv as text
  */
 function export_ads() {
-    header('Content-Type: text/html');
+    header('Content-Type: text/csv');
 
     $posts = get_posts( array(
         'category_name' => 'Annonser',
