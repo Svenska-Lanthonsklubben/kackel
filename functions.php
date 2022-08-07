@@ -1,5 +1,7 @@
 <?php
 
+require_once( __DIR__ . '/includes/export-ads.php');
+
 $theme = wp_get_theme();
 define('THEME_VERSION', $theme->Version);
 
