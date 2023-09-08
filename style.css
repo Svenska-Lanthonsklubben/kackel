@@ -113,6 +113,9 @@ ul.sub-menu {
 	margin-bottom: 20px;
 	padding: 10px;
 }
+.main-head img {
+	width: 100%;
+}
 
 .main-content {
 	grid-area: content;
@@ -165,7 +168,7 @@ li.current_page_item a{
 	font-weight: bold; 
 }
 
-.wp-block-table td, th { 
+.wp-block-table td, .wp-block-table th { 
 	padding: 6px; 
 	text-align: left; 
 }
