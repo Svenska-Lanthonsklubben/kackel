@@ -12,6 +12,9 @@ function export_ads() {
         'numberposts' => -1
     ));
     
+    // UTF-8 BOM ? 
+    echo "\xEF\xBB\xBF";
+    
     echo "Datum;Namn;Art;Email;Telefon;Ort;Medlemsnummer;Anonstext\n";
 
     foreach($posts as $post) {
