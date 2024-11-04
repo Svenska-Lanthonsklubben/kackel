@@ -77,9 +77,9 @@ function submit_ad_form_shortcode() {
                 gå till <a href="https://www.kackel.se/wp-admin/edit.php?s&post_status=all&post_type=post&action=-1&m=0&cat=4&filter_action=Filtrera&paged=1&action2=-1">HIT</a>
                 för att godkänna.
                 EOD;
-                
+
                 $headers = array('Content-Type: text/html; charset=UTF-8');
-                wp_mail("hemsida@kackel.se", "Ny annons", $email_body, $headers)
+                wp_mail("hemsida@kackel.se", "Ny annons", $email_body, $headers);
             } else {
                 echo '<p>Något gick fel, var god försök igen.</p>';
             }           
