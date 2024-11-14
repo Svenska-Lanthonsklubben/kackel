@@ -39,7 +39,7 @@ function submit_ad_form_shortcode() {
 
         // Validate required fields
         if (!$race || !$name || !$memberID || !$email || !$text) {
-            echo '<p>Var god fyll i alla nödvändiga fält.</p>';
+            echo '<p class="error-message">Var god fyll i alla nödvändiga fält.</p>';
         } else {
             // Prepare the post content
             $content = <<<EOD
@@ -70,7 +70,9 @@ function submit_ad_form_shortcode() {
             $post_id = wp_insert_post($new_post);
 
             if ($post_id) {
-                echo '<p>Din annons har nu skickats in! Den publiceras så fort någon har granskat den.</p>';
+                echo '<p class="success-message">Din annons har nu skickats in! Den publiceras så fort någon har granskat den.</p>';
+                //Hide form on successful post.
+                echo '<style>#submit_ad_form { display: none; }</style>';
 
                 $email_body = <<<EOD
                 En ny annons har skickats in, 
@@ -81,14 +83,14 @@ function submit_ad_form_shortcode() {
                 $headers = array('Content-Type: text/html; charset=UTF-8');
                 wp_mail("hemsida@kackel.se", "Ny annons", $email_body, $headers);
             } else {
-                echo '<p>Något gick fel, var god försök igen.</p>';
+                echo '<p class="error-message">Något gick fel, var god försök igen.</p>';
             }           
         }
     }
 
     // Output the form HTML
     ?>
-    <form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
+    <form id="submit_ad_form" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
         <?php wp_nonce_field('submit_ad_form', 'submit_ad_nonce'); ?>
         <label for="ras">Ras *</label>
         <select name="ras" required>
@@ -133,7 +135,7 @@ function submit_ad_form_shortcode() {
         <label for="annonstext">Annonstext *</label>
         <textarea name="annonstext" required></textarea>
 
-        <input type="submit" name="submit_ad" value="Submit Ad">
+        <input type="submit" name="submit_ad" value="Skicka in">
     </form>
     <?php
 
