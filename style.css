@@ -3,7 +3,7 @@ Theme Name: Wordpresstema för kackel.se
 Author: Svenska Lanthönsklubben
 Author URI: https://www.kackel.se/
 GitHub Theme URI: Svenska-Lanthonsklubben/kackel
-Version: 0.11.1
+Version: 0.11.2
 */
 
 html {
@@ -186,6 +186,69 @@ li.current_page_item a{
 	width: 96%;
 	background-color: white;
 	padding: 10px;
+}
+
+/* Form container styling */
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Label styling */
+form label {
+    font-size: 14px;
+    color: #5a3b30; /* Darker text color */
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Required asterisk styling */
+form label .required {
+    color: red;
+}
+
+/* Input, select, and textarea field styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a89587; /* Light border color */
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #5a3b30;
+}
+
+/* Select field specific styling */
+form select {
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Submit button styling */
+form input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #5a3b30;
+    background-color: #f7f5f3; /* Light background color */
+    border: 1px solid #5a3b30;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e6e2df; /* Slightly darker on hover */
 }
 
 /* Dölj ny annons-knappen */
